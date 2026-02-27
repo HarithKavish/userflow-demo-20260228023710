@@ -2,11 +2,14 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
+    --light-color: #34495e;
     --dark-color: #2c3e50;
     --success-color: #27ae60;
     --warning-color: #f39c12;
     --transition-speed: 0.3s;
+    --bg-dark: #1a1a1a;
+    --text-dark: #e0e0e0;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -18,8 +21,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--text-dark);
+    background-color: var(--bg-dark);
 }
 
 .container {
@@ -61,7 +64,7 @@ body {
 }
 
 .main-nav ul li a {
-    color: white;
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 500;
     transition: color var(--transition-speed);
@@ -73,7 +76,7 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
     background-position: center;
     color: white;
@@ -122,12 +125,12 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--shadow-dark);
 }
 
 .types-section, .techniques-section, .advantages-section, .challenges-section, .future-section {
     padding: 4rem 0;
-    background-color: white;
+    background-color: var(--dark-color);
 }
 
 .section-title {
@@ -145,15 +148,16 @@ body {
 
 .type-card, .advantage-card {
     background-color: var(--light-color);
+    color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow-dark);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .type-card:hover, .advantage-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
 .techniques-content {
@@ -173,6 +177,7 @@ body {
 
 .techniques-text p {
     margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
 .techniques-visual {
@@ -200,6 +205,7 @@ body {
 
 .challenges-list li {
     margin-bottom: 0.5rem;
+    color: var(--text-dark);
 }
 
 .future-content {
@@ -217,9 +223,10 @@ body {
 
 .stat-card {
     background-color: var(--light-color);
+    color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow-dark);
 }
 
 .stat-card h4 {
@@ -246,6 +253,7 @@ body {
 
 .footer-section p {
     margin-bottom: 1rem;
+    color: var(--text-dark);
 }
 
 .footer-section address {
@@ -270,9 +278,11 @@ body {
 .newsletter-form input {
     flex: 1;
     padding: 0.8rem;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     font-size: 1rem;
+    background-color: var(--dark-color);
+    color: white;
 }
 
 .newsletter-form button {
@@ -280,53 +290,4 @@ body {
     color: white;
     border: none;
     padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color var(--transition-speed);
-}
-
-.newsletter-form button:hover {
-    background-color: #2980b9;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-
-    .types-grid, .advantages-grid, .techniques-content, .challenges-content, .future-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-}
+    border-radius: 5px
