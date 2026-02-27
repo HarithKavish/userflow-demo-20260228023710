@@ -26,23 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add hover effects for cards
+    // Add dark theme hover effects for cards
     const cards = document.querySelectorAll('.type-card, .advantage-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+            this.style.backgroundColor = '#1a1a1a';
+            this.style.color = '#fff';
+            this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.4)';
+            this.style.borderRadius = '8px';
         });
 
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+            this.style.backgroundColor = '#2d2d2d';
+            this.style.color = '#fff';
             this.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
         });
     });
 
-    // Add animation to hero section
+    // Add animation to hero section with dark theme adjustments
     const heroSection = document.querySelector('.hero-content');
     if (heroSection) {
+        heroSection.style.backgroundColor = '#1a1a1a';
+        heroSection.style.color = '#fff';
         heroSection.style.opacity = '0';
         heroSection.style.transform = 'translateY(20px)';
         window.addEventListener('scroll', function() {
